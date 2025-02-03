@@ -98,7 +98,7 @@ fun ProfileScreen() {
 
                 // Username
                 Text(
-                    text = "John Doe",
+                    text = "Jiafei Fan",
                     style = MaterialTheme.typography.titleLarge
                 )
 

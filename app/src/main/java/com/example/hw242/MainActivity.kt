@@ -58,13 +58,13 @@ fun Greeting() {
     Text(
         text = "Hello",
 
-    )
+        )
 }
 
 
 @Composable
 fun ProfileScreen() {
-    // 创建 SnackbarHostState 和 CoroutineScope，用于显示 Snackbar
+    // Create SnackbarHostState and CoroutineScope to display Snackbar
     val snackbarHostState = remember { SnackbarHostState() }
     val coroutineScope = rememberCoroutineScope()
 
@@ -79,13 +79,13 @@ fun ProfileScreen() {
                 .background(Color(0xFFEAEAEA)),
             contentAlignment = Alignment.Center
         ) {
-            // 整个页面：Column 垂直排列
+            // Entire page: Column arranged vertically
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier.padding(16.dp)
             ) {
-                // 圆形头像
+                // Circular profile picture
                 Image(
                     painter = painterResource(id = R.drawable.profile_circle),
                     contentDescription = "Profile Picture",
@@ -96,7 +96,7 @@ fun ProfileScreen() {
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // 用户名
+                // Username
                 Text(
                     text = "John Doe",
                     style = MaterialTheme.typography.titleLarge
@@ -111,7 +111,7 @@ fun ProfileScreen() {
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                // Follow 按钮
+                // Follow button
                 Button(onClick = {
                     coroutineScope.launch {
                         snackbarHostState.showSnackbar("Following John Doe")
